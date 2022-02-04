@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text-quest</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+  <style>
+    * {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-size: 32px;
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      -o-user-select: none;
+      user-select: none;
+    }
+
+    .item {
+      padding: 4px 16px;
+      border: 1px solid #aaa;
+      border-radius: 4px;
+      cursor: pointer;
+      line-height: 60px;
+    }
+
+    .item:hover {
+      color: #fff;
+      background-color: #888;
+    }
+
+    .item~.item {
+      margin-left: 2px;
+
+    }
+
+    body {
+      background: rgb(251, 63, 63);
+      background: linear-gradient(83deg, rgba(251, 63, 63, 1) 0%, rgba(70, 252, 85, 1) 54%);
+      padding: 8px;
+      height: 100vh;
+    }
+
+    div {
+      margin-top: 32px;
+    }
+
+    video {
+      display: none;
+    }
+
+    h1 {
+      font-size: 40px;
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root"></div>
+
+
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script>
+    Array.prototype.disorder = function (preserve) {
+      var array = preserve ? this.slice() : this;
+      var disordered = [];
+
+      while (array.length > 0) {
+        var index = Math.round(Math.random() * (array.length - 1));
+        disordered.push(array[index]);
+        array.splice(index, 1);
+      }
+
+      if (!preserve) {
+        Array.prototype.push.apply(this, disordered);
+      }
+
+      return disordered;
+    };
+  </script>
+
+  <script type="text/babel">
+    const rootElement = document.getElementById('root')
+    const bank = `Mùa xuân xin chúc-Khúc ca an bình-Năm mới phát tài-Vạn sự như ý-Già trẻ lớn bé-Đầy ắp tiếng cười-Trên mặt ngời ngời-Tràn đầy hạnh phúc-Xuân đến hy vọng-Ấm no mọi nhà-Kính chúc ông bà-Sống lâu trăm tuổi-Kính chúc ba mẹ-Sức khoẻ dồi dào-Đôi lứa yêu nhau-Càng thêm nồng ấm-Các em bé nhỏ-Học giỏi chăm ngoan-Chúc Tết mọi người-Năm mới hoan hỉ-Gặp nhiều niềm vui-Năm hết Tết đến-Chúc ông chúc bà-Chúc cha chúc mẹ-Chúc cô chúc cậu-Chúc chú chúc dì-Chúc anh chúc chị-Chúc luôn các em-Chúc cả các cháu-Dồi dào sức khoẻ-Có nhiều niềm vui-Tiền xu nặng túi-Tiền giấy đầy bao-Đi ăn được khao-Về nhà người rước-Tiền vô như nước-Tình vào đầy tim-Chăn ấm nệm êm-Sung sướng ban đêm-Hạnh phúc ban ngày-Luôn luôn gặp may-Tràn đầy hạnh phúc-Năm mới Tết đến-Rước hên vào nhà-Quà cáp bao la-Mọi nhà no đủ-Vàng bạc đầy tủ-Gia chủ phát tài-Già trẻ gái trai-Sum vầy hạnh phúc-Cầu tài chúc phúc-Lộc đến quanh năm-An khang thịnh vượng-Cung chúc tân niên-Sức khỏe vô biên-Thành công liên miên-Hạnh phúc triền miên-Túi luôn đầy tiền-Sung sướng như tiên-Chúc bạn hoan hỉ-Sức khỏe bền bỉ-Công danh hết ý-Tiền vào bạc tỉ-Tiền ra ri rỉ-Tình yêu thỏa chí-Vạn sự như ý-Luôn cười hí hí-Cung hỷ cung hỷ-Năm mới kính chúc-Đẹp như hoa hồng-Thành công như Cúc-Hạnh phúc như hoa Mai-Phát tài như hoa Pháo-Độc đáo như hoa Lan-An khang như hoa Huệ-Trí tuệ như hoa Sen-Chiềng làng chiềng xã-Thượng hạ đông tây-Xa gần đó đây-Vểnh tai nghe chúc-Tân niên sung túc-Lắm phúc nhiều duyên-Trong túi nhiều tiền-Tâm hồn vui sướng-Năm mới năm me-Gia đình mạnh khỏe-Mọi người tươi trẻ-Đi chơi vui vẻ`
+    const splitBank = bank.split('-')
+    const getRandomQuestion = () => splitBank[Math.floor(Math.random() * splitBank.length)]
+
+    function App() {
+      const [key, setKey] = React.useState('12345')
+      const [question, setQuestion] = React.useState(key.split('').disorder())
+      const [answer, setAnswer] = React.useState([])
+      const [inputDone, setInputDone] = React.useState(false)
+      const successRef = React.useRef()
+      const overRef = React.useRef()
+
+      const handleAddAnswer = (item, index) => {
+        setAnswer(preAnswer => [...preAnswer, item])
+        setQuestion(preQuestion => {
+          let nextQuestion = [...preQuestion]
+          nextQuestion.splice(index, 1)
+          return nextQuestion
+        })
+      }
+
+      const handleRemoveAnswer = (item, index) => {
+        setAnswer(preAnswer => {
+          let nextAnswer = [...preAnswer]
+          nextAnswer.splice(index, 1)
+          return nextAnswer
+        })
+        setQuestion(preQuestion => [...preQuestion, item])
+      }
+
+      const handleNextQuestion = () => {
+        setKey(getRandomQuestion)
+      }
+
+      const handleClearAnswer = () => {
+        setInputDone(false)
+        setQuestion(key.split('').disorder())
+        setAnswer([])
+      }
+
+      React.useEffect(() => {
+        setQuestion(key.split('').disorder())
+        setAnswer([])
+      }, [key])
+
+      React.useEffect(() => {
+        let value = answer.reduce((result, item) => result + item, '')
+        if (value.length == key.length) {
+          setInputDone(true)
+          if (value == key) {
+            successRef.current.play()
+            handleNextQuestion()
+          }
+          else {
+            overRef.current.play()
+          }
+        }
+        else setInputDone(false)
+      }, [answer])
+
+      return (
+        <div>
+          <div><h1> Question: </h1> {question.map((item, index) =>
+            <span key={index} className="item" onClick={e => handleAddAnswer(item, index)}>{item}</span>
+          )}</div>
+          <div>
+            <h1>Answer:</h1> {answer.map((item, index) =>
+              <span key={index} className="item" onClick={e => handleRemoveAnswer(item, index)}>{item}</span>
+            )}
+            {inputDone && <div>
+              <button type="button" class="btn btn-outline-primary btn-sm" onClick={handleClearAnswer}>Clear answer</button>
+            </div>}
+          </div>
+          <div>
+            <button type="button" class="btn btn-outline-primary btn-sm" onClick={handleNextQuestion}>Next question</button>
+          </div>
+          <video ref={successRef} className="gameSuccess" src="https://tiengdong.com/wp-content/uploads/Am-thanh-tra-loi-dung-chinh-xac-www_tiengdong_com.mp3"></video>
+          <video ref={overRef} className="gameOver" src="https://tiengdong.com/wp-content/uploads/Tieng-sung-ban-1-phat-www_tiengdong_com.mp3"></video>
+        </div>
+      )
+    }
+
+    ReactDOM.render(<App />, rootElement)
+  </script>
+</body>
+
+</html>
